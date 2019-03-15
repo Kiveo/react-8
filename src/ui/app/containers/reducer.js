@@ -16,7 +16,8 @@ const initialState = fromJS({
 
 function reducer(state = initialState, action) {
   switch (action.type) {
-    case ???:
+    //case intially was ???, chose da.getln based on constants/actions
+    case DISPATCH_ACTIONS.GET_LUCKY_NUMBER:
       // TODO: Set things in the Redux store
     default:
       return state;
