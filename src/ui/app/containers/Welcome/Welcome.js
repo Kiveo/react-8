@@ -39,7 +39,7 @@ class Welcome extends React.PureComponent {
 
     // TODO: Get the form values and invoke the service layer
     //dispatch intially ???, changed to send action 
-    dispatch({ type: 'FORM_INPUTS', form});
+    dispatch({ type: 'DISPATCH_ACTIONS.GET_LUCKY_NUMBER', form});
   }
 
 
