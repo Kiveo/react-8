@@ -14,3 +14,10 @@ export function getLuckyNumber(username) {
 }
 
 // TODO: Add more actions if needed
+//creating sample action for functionality test
+export function getSampleMessage(message) {
+  return {
+    type: DISPATCH_ACTIONS.GET_SAMPLE_MESSAGE,
+    message
+  }
+}

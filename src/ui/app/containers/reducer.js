@@ -11,14 +11,18 @@ import { DISPATCH_ACTIONS } from './constants';
 
 // TODO: Initialize more things in the Redux store if needed
 const initialState = fromJS({
-  luckyNumber: -1
+  luckyNumber: -1,
+  message: "Sample Initial message"
 });
 
 function reducer(state = initialState, action) {
   switch (action.type) {
-    //case intially was ???, chose da.getln based on constants/actions
+    //case intially was ???, chose name based on constants/actions
     case DISPATCH_ACTIONS.GET_LUCKY_NUMBER:
       // TODO: Set things in the Redux store
+      return state;
+    case DISPATCH_ACTIONS.GET_SAMPLE_MESSAGE:
+      return {...state, message: "Sample Message Added to State"};
     default:
       return state;
   }
