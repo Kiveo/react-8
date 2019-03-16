@@ -18,8 +18,7 @@ import { DISPATCH_ACTIONS } from './constants';
 
 export function* getLuckyNumber({ username }) {
   // TODO: What port is the service layer running on again?
-  //added 1337, after testing dev localhost with lh:1337/lucky-number?username=gandolf => random lucky numbers each load
-  //altered to backticks to include query string
+  //altered to backticks to include query string, assigned dev LH: 1337
   const requestUrl = `http://localhost:1337/lucky-number?username=${username}`;
   console.log(requestUrl);
 

@@ -37,17 +37,12 @@ class Welcome extends React.PureComponent {
    */
   submit(values) {
     //why is the page refreshing? when I preventdefault via passing event, values are nixxed. why?
-    //I must presume my non-familiarity with redux-saga is causing me a lot of headaches in this app.
     const { dispatch } = this.props;
 
     // TODO: Get the form values and invoke the service layer 
-    //what does "invoke the service layer" even mean? understood as dispatch/fetch api 
-    //dispatch intially ???, changed to send an action 
-    // dispatch({type: GET_SAMPLE_MESSAGE, payload: "new message"});
-    // event.preventDefault();
+    //dispatch was intially (???), changed to send an action 
     // dispatch(getSampleMessage("getsamplemessagefired"));
-    // dispatch(getLuckyNumber("SAMPLE"));
-    console.log("finding username attr: " + values)
+    console.log("finding username attr: " + values);
     // this.props.history.push('/lucky');
   }
 
