@@ -5,7 +5,9 @@
  * It facilitates the centralization of the key values.
  */
 
-export const CONTAINER_KEY = 'code-challenge/welcome';
+// export const CONTAINER_KEY = 'code-challenge/welcome';
+//replacing the container key to rename to something simpler 
+export const CONTAINER_KEY = 'challenger'
 
 // TODO: Add more action constants if needed
 export const DISPATCH_ACTIONS = {

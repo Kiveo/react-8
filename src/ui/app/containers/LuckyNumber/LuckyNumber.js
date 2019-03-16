@@ -15,16 +15,25 @@ import { CONTAINER_KEY } from '../constants';
 import LuckyNumberDisplay from '../../components/LuckyNumberDisplay/LuckyNumberDisplay';
 
 class LuckyNumber extends React.PureComponent {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    const { firstname, lastname, username } = this.props.userInfo //added for destructuring
+    console.log(this.props);
+    
     return (
       <article>
         <Helmet>
           <title>Lucky Number</title>
         </Helmet>
 
-        <LuckyNumberDisplay {...this.props} />
+        {/* <LuckyNumberDisplay {...this.props} /> */}
         {/* testing functionality display inside LuckyNumberDisplay child component */}
-        <p>DISPLAY: {`${this.props}`}</p>
+        <p>DISPLAY: {`${firstname}`}</p>
+        <p>DISPLAY: {`${lastname}`}</p>
+        <p>DISPLAY: {`${username}`}</p>
       </article>
     );
   }
@@ -32,11 +41,14 @@ class LuckyNumber extends React.PureComponent {
 
 // const mapStateToProps = (state) => ({
 //   // TODO: Get values from Redux store
-//   luckyNumber: state.luckyNumber,
+//   // luckyNumber: state.luckyNumber,
 //   user: state.user
 // });
+
 const mapStateToProps = (state) => {
-  return {luckyNumber: state.luckyNumber}
+  return {
+       userInfo: state.get("challenger").userInfo,
+  };
 }
 
 export default connect(mapStateToProps)(LuckyNumber);

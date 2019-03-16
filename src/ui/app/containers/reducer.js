@@ -12,7 +12,7 @@ import { DISPATCH_ACTIONS } from './constants';
 // TODO: Initialize more things in the Redux store if needed
 const initialState = fromJS({
   luckyNumber: -1,
-  user: { firstname: null, lastname: null, username: null} //added
+  userInfo: {firstname: "SampleFirst", lastname: "SampleLast", username: "SampleUserinfo"}
 });
 
 function reducer(state = initialState, action) {
@@ -20,7 +20,7 @@ function reducer(state = initialState, action) {
     //case intially was ???, chose names based on constants/actions
     case DISPATCH_ACTIONS.GET_LUCKY_NUMBER:
       // TODO: Set things in the Redux store
-      return { ...state, user: action.user };
+      return { ...state, userInfo: action.user };
     case DISPATCH_ACTIONS.RETURN_LUCKY_NUMBER:
       return { ...state, luckyNumber: action.luckyNumber };
     default:
