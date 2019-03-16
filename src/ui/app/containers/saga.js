@@ -16,10 +16,11 @@ import request from 'utils/request';
 
 import { DISPATCH_ACTIONS } from './constants';
 
-export function* getLuckyNumber({ username }) {
+//changed from username to user, accomodating json format expected
+export function* getLuckyNumber({ user }) {
   // TODO: What port is the service layer running on again?
   //altered to backticks to include query string, assigned dev LH: 1337
-  const requestUrl = `http://localhost:1337/lucky-number?username=${username}`;
+  const requestUrl = `http://localhost:1337/lucky-number?username=${user.username}`;
   console.log(requestUrl);
 
   try {
@@ -27,7 +28,7 @@ export function* getLuckyNumber({ username }) {
 
     // TODO: Do stuff with the result
     //adding yield
-    yield put({ type: "RETURN_LUCKY_NUMBER", })
+    yield put({ type: "RETURN_LUCKY_NUMBER", luckyNumber})
   } catch (err) {
     // TODO: Bonus points for some error handling
   }

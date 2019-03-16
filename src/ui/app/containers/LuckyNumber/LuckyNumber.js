@@ -16,7 +16,6 @@ import LuckyNumberDisplay from '../../components/LuckyNumberDisplay/LuckyNumberD
 
 class LuckyNumber extends React.PureComponent {
   render() {
-    console.log(this.props);
     return (
       <article>
         <Helmet>
@@ -34,11 +33,10 @@ class LuckyNumber extends React.PureComponent {
 // const mapStateToProps = (state) => ({
 //   // TODO: Get values from Redux store
 //   luckyNumber: state.luckyNumber,
-//   message: state.message
+//   user: state.user
 // });
-
 const mapStateToProps = (state) => {
-  return {message: state.message}
+  return {luckyNumber: state.luckyNumber}
 }
 
-export default connect()(LuckyNumber);
+export default connect(mapStateToProps)(LuckyNumber);

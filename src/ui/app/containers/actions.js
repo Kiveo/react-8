@@ -6,22 +6,14 @@
 
 import { DISPATCH_ACTIONS } from './constants';
 
-export function getLuckyNumber(username) {
+export function getLuckyNumber(user) {
   return {
     type: DISPATCH_ACTIONS.GET_LUCKY_NUMBER,
-    username
+    user
   };
 }
 
 // TODO: Add more actions if needed
-//creating sample action for functionality test
-export function getSampleMessage(message) {
-  return {
-    type: DISPATCH_ACTIONS.GET_SAMPLE_MESSAGE,
-    message
-  }
-}
-
 //creating success action
 export function returnLuckyNumber(luckyNumber) {
   return {
