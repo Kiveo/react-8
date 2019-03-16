@@ -8,18 +8,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-//convert class to functional???????
+//converted class to functional component
 const LuckyNumberDisplay = (props) => {
     // TODO: Receive props passed down from LuckyNumber container
     // const { } = this.props;
     const { firstname, lastname, username } = props.userInfo;
+    // const { luckynumber } = props.luckynumber;
     return (
       <div className="mt5 pa4 center w-25 bg-light-gray">
         {/* TODO: Display the user's full name and their lucky number */}
-        <p>HELLO WORLD!! TESTING FUNCTIONALITY</p>
-        <p>Props: {`${firstname}`}</p>
-        <p>Props: {`${lastname}`}</p>
-        <p>Props: {`${username}`}</p>
+        <p>Hello, {`${firstname + " " + lastname}!`}</p>
+        <p>Your lucky number is: </p>
+        {/* <p>Luckynumber: {`${luckynumber}`}</p> */}
       </div>
     );
 }

@@ -6,7 +6,7 @@
  */
 
 // export const CONTAINER_KEY = 'code-challenge/welcome';
-//replacing the container key to rename to something simpler 
+// container key to renamed for easier access referral
 export const CONTAINER_KEY = 'challenger'
 
 // TODO: Add more action constants if needed

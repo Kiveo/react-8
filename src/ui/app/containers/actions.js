@@ -14,7 +14,7 @@ export function getLuckyNumber(user) {
 }
 
 // TODO: Add more actions if needed
-//creating success action
+// creating success action
 export function returnLuckyNumber(luckyNumber) {
   return {
     type: DISPATCH_ACTIONS.RETURN_LUCKY_NUMBER,

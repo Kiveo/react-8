@@ -15,9 +15,10 @@ const initialState = fromJS({
   userInfo: {firstname: "SampleFirst", lastname: "SampleLast", username: "SampleUserinfo"}
 });
 
+// may consider decoupling luckynumber from user info, but focusing on minimum functionality first
 function reducer(state = initialState, action) {
   switch (action.type) {
-    //case intially was ???, chose names based on constants/actions
+    //case intially was (???), names based on constants/actions
     case DISPATCH_ACTIONS.GET_LUCKY_NUMBER:
       // TODO: Set things in the Redux store
       return { ...state, userInfo: action.user };
