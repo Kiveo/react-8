@@ -20,7 +20,7 @@ import WelcomeForm from 'components/WelcomeForm/WelcomeForm';
 import { CONTAINER_KEY } from '../constants';
 import saga from '../saga';
 import reducer from '../reducer';
-import { getSampleMessage } from '../actions';
+import { getSampleMessage, getLuckyNumber } from '../actions';
 
 class Welcome extends React.PureComponent {
   constructor(props) {
@@ -35,7 +35,7 @@ class Welcome extends React.PureComponent {
    * @see https://redux-form.com/7.4.2/docs/gettingstarted.md/#step-4-of-4-reacting-to-submit
    * @param {*} values An immutable map of the Redux Form values
    */
-  submit(event, values) {
+  submit(values) {
     //why is the page refreshing? when I preventdefault via passing event, values are nixxed. why?
     //I must presume my non-familiarity with redux-saga is causing me a lot of headaches in this app.
     const { dispatch } = this.props;
@@ -44,9 +44,11 @@ class Welcome extends React.PureComponent {
     //what does "invoke the service layer" even mean? understood as dispatch/fetch api 
     //dispatch intially ???, changed to send an action 
     // dispatch({type: GET_SAMPLE_MESSAGE, payload: "new message"});
-    event.preventDefault();
-    dispatch(getSampleMessage("getsamplemessagefired"));
-    this.props.history.push('/lucky');
+    // event.preventDefault();
+    // dispatch(getSampleMessage("getsamplemessagefired"));
+    // dispatch(getLuckyNumber("SAMPLE"));
+    console.log("finding username attr: " + values)
+    // this.props.history.push('/lucky');
   }
 
 
@@ -59,8 +61,8 @@ class Welcome extends React.PureComponent {
         </Helmet>
 
         <div className="mt5 pa4 center w-25 bg-light-gray">
-          {/* adding handleSubmit to form functionality  */}
-          <WelcomeForm handleSubmit={this.submit} />
+          {/* adding Submit to form functionality  */}
+          <WelcomeForm onSubmit={this.submit} />
         </div>
       </article>
     );

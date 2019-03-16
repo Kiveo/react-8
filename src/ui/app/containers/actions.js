@@ -23,9 +23,9 @@ export function getSampleMessage(message) {
 }
 
 //creating success action
-export function returnLuckyNumber() {
+export function returnLuckyNumber(luckyNumber) {
   return {
-    type: DISPATCH_ACTIONS.LUCKY_NUMBERS_SUCCEEDED,
+    type: DISPATCH_ACTIONS.RETURN_LUCKY_NUMBER,
     luckyNumber
   }
 }

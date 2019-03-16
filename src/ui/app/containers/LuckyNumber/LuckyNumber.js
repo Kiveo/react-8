@@ -25,6 +25,7 @@ class LuckyNumber extends React.PureComponent {
 
         <LuckyNumberDisplay {...this.props} />
         {/* testing functionality display inside LuckyNumberDisplay child component */}
+        <p>DISPLAY: {`${this.props}`}</p>
       </article>
     );
   }

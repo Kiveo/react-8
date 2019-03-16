@@ -20,7 +20,7 @@ function reducer(state = initialState, action) {
     //case intially was ???, chose name based on constants/actions
     case DISPATCH_ACTIONS.GET_LUCKY_NUMBER:
       // TODO: Set things in the Redux store
-      return state;
+      return {...state, username: action.username};
     case DISPATCH_ACTIONS.GET_SAMPLE_MESSAGE:
       return {...state, message: action.message};
     case DISPATCH_ACTIONS.RETURN_LUCKY_NUMBER:
