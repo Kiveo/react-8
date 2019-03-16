@@ -22,7 +22,7 @@ function reducer(state = initialState, action) {
       // TODO: Set things in the Redux store
       return state;
     case DISPATCH_ACTIONS.GET_SAMPLE_MESSAGE:
-      return {...state, message: "Sample Message Added to State"};
+      return {...state, message: action.payload};
     default:
       return state;
   }
