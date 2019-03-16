@@ -20,20 +20,12 @@ class LuckyNumber extends React.PureComponent {
   }
 
   render() {
-    const { firstname, lastname, username } = this.props.userInfo //added for destructuring
-    console.log(this.props);
-    
     return (
       <article>
         <Helmet>
           <title>Lucky Number</title>
         </Helmet>
-
-        {/* <LuckyNumberDisplay {...this.props} /> */}
-        {/* testing functionality display inside LuckyNumberDisplay child component */}
-        <p>DISPLAY: {`${firstname}`}</p>
-        <p>DISPLAY: {`${lastname}`}</p>
-        <p>DISPLAY: {`${username}`}</p>
+        <LuckyNumberDisplay {...this.props} />
       </article>
     );
   }
