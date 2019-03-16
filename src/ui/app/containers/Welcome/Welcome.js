@@ -34,12 +34,17 @@ class Welcome extends React.PureComponent {
    * @see https://redux-form.com/7.4.2/docs/gettingstarted.md/#step-4-of-4-reacting-to-submit
    * @param {*} values An immutable map of the Redux Form values
    */
-  submit(values) {
+  submit(event, values) {
+    //why is the page refreshing? when I preventdefault via passing event, values are nixxed. why?
+    //I must presume my non-familiarity with redux-saga is causing me a lot of headaches in this app.
     const { dispatch } = this.props;
 
-    // TODO: Get the form values and invoke the service layer
+    // TODO: Get the form values and invoke the service layer 
+    //what does "invoke the service layer" even mean? understood as dispatch/fetch api 
     //dispatch intially ???, changed to send an action 
-    dispatch({type: GET_SAMPLE_MESSAGE, payload: "new message"});
+    // dispatch({type: GET_SAMPLE_MESSAGE, payload: "new message"});
+    event.preventDefault();
+    this.props.history.push('/lucky');
   }
 
 

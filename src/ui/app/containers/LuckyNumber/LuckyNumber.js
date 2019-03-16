@@ -19,14 +19,18 @@ class LuckyNumber extends React.PureComponent {
           <title>Lucky Number</title>
         </Helmet>
 
-        <LuckyNumberDisplay {...this.props} />
+        {/* <LuckyNumberDisplay {...this.props} /> */}
+        {/* testing functionality display below in <p> */}
+        {/* <p>HELLO WORLD, from LuckyNumber class component</p> */}
       </article>
     );
   }
 }
 
-const mapStateToProps = () => ({
+const mapStateToProps = (state) => ({
   // TODO: Get values from Redux store
+  luckyNumber: state.luckyNumber,
+  message: state.message
 });
 
 export default connect()(LuckyNumber);

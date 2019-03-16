@@ -25,8 +25,12 @@ export function* getLuckyNumber({ username }) {
     const result = yield call(request, requestUrl);
 
     // TODO: Do stuff with the result
+    //adding yield
+    yield put({type: "LUCKY_NUMBERS_SUCCEEDED", luckyNumber: luckyNumber})
   } catch (err) {
     // TODO: Bonus points for some error handling
+    //added yield
+    yield put({type: "ERROR", message: err.message});
   }
 }
 

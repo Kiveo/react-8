@@ -23,6 +23,8 @@ function reducer(state = initialState, action) {
       return state;
     case DISPATCH_ACTIONS.GET_SAMPLE_MESSAGE:
       return {...state, message: action.payload};
+    case DISPATCH_ACTIONS.RETURN_LUCKY_NUMBER:
+      return {...state, luckyNumber: action.luckyNumber};
     default:
       return state;
   }
