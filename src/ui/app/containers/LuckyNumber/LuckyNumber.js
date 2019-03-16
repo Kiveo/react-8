@@ -11,26 +11,33 @@ import { Helmet } from 'react-helmet';
 
 import { CONTAINER_KEY } from '../constants';
 
+//adding import for child luckynumberdisplay
+import LuckyNumberDisplay from '../../components/LuckyNumberDisplay/LuckyNumberDisplay';
+
 class LuckyNumber extends React.PureComponent {
   render() {
+    console.log(this.props);
     return (
       <article>
         <Helmet>
           <title>Lucky Number</title>
         </Helmet>
 
-        {/* <LuckyNumberDisplay {...this.props} /> */}
-        {/* testing functionality display below in <p> */}
-        {/* <p>HELLO WORLD, from LuckyNumber class component</p> */}
+        <LuckyNumberDisplay {...this.props} />
+        {/* testing functionality display inside LuckyNumberDisplay child component */}
       </article>
     );
   }
 }
 
-const mapStateToProps = (state) => ({
-  // TODO: Get values from Redux store
-  luckyNumber: state.luckyNumber,
-  message: state.message
-});
+// const mapStateToProps = (state) => ({
+//   // TODO: Get values from Redux store
+//   luckyNumber: state.luckyNumber,
+//   message: state.message
+// });
+
+const mapStateToProps = (state) => {
+  return {message: state.message}
+}
 
 export default connect()(LuckyNumber);

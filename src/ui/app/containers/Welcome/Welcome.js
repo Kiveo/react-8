@@ -20,6 +20,7 @@ import WelcomeForm from 'components/WelcomeForm/WelcomeForm';
 import { CONTAINER_KEY } from '../constants';
 import saga from '../saga';
 import reducer from '../reducer';
+import { getSampleMessage } from '../actions';
 
 class Welcome extends React.PureComponent {
   constructor(props) {
@@ -44,6 +45,7 @@ class Welcome extends React.PureComponent {
     //dispatch intially ???, changed to send an action 
     // dispatch({type: GET_SAMPLE_MESSAGE, payload: "new message"});
     event.preventDefault();
+    dispatch(getSampleMessage("getsamplemessagefired"));
     this.props.history.push('/lucky');
   }
 
