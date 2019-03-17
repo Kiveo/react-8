@@ -20,7 +20,7 @@ const LuckyNumberDisplay = (props) => {
         {/* TODO: Display the user's full name and their lucky number */}
         <p>Hello, {`${firstname + " " + lastname}!`}</p>
         <p>Your lucky number is: </p>
-        <p>Lucky Number: {`${luckyNumber}`} </p>
+        <p>{`${luckyNumber}`}</p>
       </div>
     );
 }
