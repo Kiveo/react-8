@@ -24,7 +24,6 @@ class WelcomeForm extends React.PureComponent {
       <form className="flex flex-column" onSubmit={handleSubmit}>
         {/* Added onsubmit to form tag */}
         {/* TODO: Add elements to form to collect user input */}
-        {/* altering to include fields for firstname, lastname, username */}
         <Field
           name="firstname"
           component={RFTextField}

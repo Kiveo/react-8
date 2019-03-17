@@ -5,7 +5,7 @@
  */
 
 import { DISPATCH_ACTIONS } from './constants';
-
+// to get luckynumber, api requires user.username
 export function getLuckyNumber(user) {
   return {
     type: DISPATCH_ACTIONS.GET_LUCKY_NUMBER,

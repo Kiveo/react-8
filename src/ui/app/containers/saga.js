@@ -19,18 +19,19 @@ import { returnLuckyNumber } from './actions';
 
 export function* getLuckyNumber({ user }) {
   // TODO: What port is the service layer running on again?
-  //altered to backticks to include query string, assigned dev LH: 1337
+  // Opted for backticks to include query string, assigned dev LH: 1337
   const requestUrl = `http://localhost:1337/lucky-number?username=${user.username}`;
-  console.log(requestUrl);
   try {
     const data = yield call(request, requestUrl);
     // TODO: Do stuff with the result
-    console.log("data.LuckyNumber: " + data.luckyNumber)
     yield put(returnLuckyNumber(data.luckyNumber))
     yield put(push('/lucky'));
   } catch (err) {
-    console.log(err);
     // TODO: Bonus points for some error handling
+    console.log(err);
+    // My intial thoughts for error handling: send a dispatch and have it display an error field or redirect. 
+    // yield put(returnErrorMessage(error))
+    // Will return to this later, on my GH when I have more time 
   }
 }
 

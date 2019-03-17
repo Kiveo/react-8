@@ -8,9 +8,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
-
-import { CONTAINER_KEY } from '../constants';
-
+//currently unused, will add when implemented
+// import { CONTAINER_KEY } from '../constants';    
 //adding import for child luckynumberdisplay
 import LuckyNumberDisplay from '../../components/LuckyNumberDisplay/LuckyNumberDisplay';
 
@@ -25,6 +24,7 @@ class LuckyNumber extends React.PureComponent {
         <Helmet>
           <title>Lucky Number</title>
         </Helmet>
+        {/* passing props to child for display */}
         <LuckyNumberDisplay {...this.props} />
       </article>
     );

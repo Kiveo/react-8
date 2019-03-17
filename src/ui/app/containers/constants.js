@@ -6,11 +6,11 @@
  */
 
 // export const CONTAINER_KEY = 'code-challenge/welcome';
-// container key to renamed for easier access referral
+// Opted to rename key for easier access referral
 export const CONTAINER_KEY = 'challenger'
 
-// TODO: Add more action constants if needed
 export const DISPATCH_ACTIONS = {
   GET_LUCKY_NUMBER: `${CONTAINER_KEY}/GET_LUCKY_NUMBER`,
+  // TODO: Add more action constants if needed
   RETURN_LUCKY_NUMBER: `${CONTAINER_KEY}/RETURN_LUCKY_NUMBER`
 };

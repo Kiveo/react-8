@@ -20,7 +20,7 @@ import WelcomeForm from 'components/WelcomeForm/WelcomeForm';
 import { CONTAINER_KEY } from '../constants';
 import saga from '../saga';
 import reducer from '../reducer';
-import { getSampleMessage, getLuckyNumber } from '../actions';
+import { getLuckyNumber } from '../actions';
 
 class Welcome extends React.PureComponent {
   constructor(props) {
@@ -36,20 +36,12 @@ class Welcome extends React.PureComponent {
    * @param {*} values An immutable map of the Redux Form values
    */
   submit(values) {
-    //why is the page refreshing? when I preventdefault via passing event, values are nixxed. why?
     const { dispatch } = this.props;
-
     // TODO: Get the form values and invoke the service layer 
-    //dispatch was intially (???), changed to send an action 
-    // dispatch(getSampleMessage("getsamplemessagefired"));
-    // console.log("finding username attr: " + values.toJSON().username);
+    // opted for json, to use object and keep all values, vs .get()
     const user = values.toJSON();
-    if (dispatch(getLuckyNumber(user)) ) {
-      // this.props.history.push('/lucky');
-    }
+    dispatch(getLuckyNumber(user))
   }
-
-
 
   render() {
     return (
@@ -57,9 +49,8 @@ class Welcome extends React.PureComponent {
         <Helmet>
           <title>Welcome</title>
         </Helmet>
-
         <div className="mt5 pa4 center w-25 bg-light-gray">
-          {/* adding Submit to form functionality  */}
+          {/* adding submit to form functionality  */}
           <WelcomeForm onSubmit={this.submit} />
         </div>
       </article>

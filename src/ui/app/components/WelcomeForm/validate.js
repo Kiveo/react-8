@@ -14,7 +14,7 @@
 export const validate = (values) => {
   const errors = {};
   // TODO: Validate that the user has entered a username, first name, and last name
-  // since values are in an immutable map, values.valueName won't work. Using .get('valueName') to select
+  // since values are in an immutable map, values.valueName won't work well. Using .get('valueName') to select
   if (!values.get('firstname') || (!values.get('firstname').trim()) ) {
     // proptypes demand a bool value
     errors.firstname = true; 
@@ -23,7 +23,6 @@ export const validate = (values) => {
     errors.lastname = true; 
   }
   if (!values.get('username') || (!values.get('username').trim()) ) {
-    // proptypes demand a bool value
     errors.username = true; 
   }
 

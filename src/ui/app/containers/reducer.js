@@ -12,13 +12,14 @@ import { DISPATCH_ACTIONS } from './constants';
 // TODO: Initialize more things in the Redux store if needed
 const initialState = fromJS({
   luckyNumber: -1,
+  // probably dont need userInfo initially, but stubbed it out for development
   userInfo: {firstname: "SampleFirst", lastname: "SampleLast", username: "SampleUserinfo"}
 });
 
-// may consider decoupling luckynumber from user info, but focusing on minimum functionality first
+// considered decoupling GET_LUCKY from user info, but focusing on minimum functionality + API requires username anyway
 function reducer(state = initialState, action) {
   switch (action.type) {
-    //case intially was (???), names based on constants/actions
+    //case intially (???), names based on constants/actions
     case DISPATCH_ACTIONS.GET_LUCKY_NUMBER:
       // TODO: Set things in the Redux store
       return { ...state, userInfo: action.user};
