@@ -9,8 +9,10 @@ import 'whatwg-fetch';
  */
 function parseJSON(response) {
   if (response.status === 204 || response.status === 205) {
+    console.log('204/205');
     return null;
   }
+  console.log("within parseJSON...")
   return response.json();
 }
 
@@ -23,9 +25,11 @@ function parseJSON(response) {
  */
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
+    console.log("returning response...");
+    console.log("initial response: " + response)
     return response;
   }
-
+  console.log("FAILED");
   const error = new Error(response.statusText);
   error.response = response;
   throw error;
@@ -42,5 +46,6 @@ function checkStatus(response) {
 export default function request(url, options) {
   return fetch(url, options)
     .then(checkStatus)
-    .then(parseJSON);
+    .then(parseJSON)
+    .catch(error => alert(error));
 }

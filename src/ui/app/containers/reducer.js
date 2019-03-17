@@ -23,7 +23,7 @@ function reducer(state = initialState, action) {
       // TODO: Set things in the Redux store
       return { ...state, userInfo: action.user};
     case DISPATCH_ACTIONS.RETURN_LUCKY_NUMBER:
-      return { ...state, luckyNumber: 500 };
+      return { ...state, luckyNumber: action.luckyNumber };
     default:
       return state;
   }

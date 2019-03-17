@@ -26,9 +26,10 @@ export function* getLuckyNumber({ user }) {
   try {
     // debugger;
     // const result = yield call(request2, requestUrl);
+    const data = yield call(request2, requestUrl);
     // TODO: Do stuff with the result
-    alert("before")
-    yield put(returnLuckyNumber(255))
+    console.log("data.LuckyNumber: " + data.luckyNumber)
+    yield put(returnLuckyNumber(data.luckyNumber))
     alert("after")
   } catch (err) {
     console.log(err);

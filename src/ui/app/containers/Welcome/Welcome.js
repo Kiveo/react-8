@@ -45,9 +45,8 @@ class Welcome extends React.PureComponent {
     // console.log("finding username attr: " + values.toJSON().username);
     const user = values.toJSON();
     if (dispatch(getLuckyNumber(user)) ) {
-      this.props.history.push('/lucky');
+      // this.props.history.push('/lucky');
     }
-    // this.props.history.push('/lucky');
   }
 
 
