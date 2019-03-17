@@ -31,15 +31,11 @@ class LuckyNumber extends React.PureComponent {
   }
 }
 
-// const mapStateToProps = (state) => ({
-//   // TODO: Get values from Redux store
-//   // luckyNumber: state.luckyNumber,
-//   user: state.user
-// });
-
 const mapStateToProps = (state) => {
+  //TODO: Get values from Redux store
   return {
        userInfo: state.get("challenger").userInfo,
+       luckyNumber: state.get("challenger").luckyNumber
   };
 }
 

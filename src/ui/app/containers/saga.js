@@ -20,29 +20,19 @@ import { returnLuckyNumber } from './actions';
 export function* getLuckyNumber({ user }) {
   // TODO: What port is the service layer running on again?
   //altered to backticks to include query string, assigned dev LH: 1337
-  let request2 = request;
   const requestUrl = `http://localhost:1337/lucky-number?username=${user.username}`;
   console.log(requestUrl);
   try {
-    // debugger;
-    // const result = yield call(request2, requestUrl);
-    const data = yield call(request2, requestUrl);
+    const data = yield call(request, requestUrl);
     // TODO: Do stuff with the result
     console.log("data.LuckyNumber: " + data.luckyNumber)
     yield put(returnLuckyNumber(data.luckyNumber))
-    alert("after")
+    yield put(push('/lucky'));
   } catch (err) {
     console.log(err);
     // TODO: Bonus points for some error handling
   }
 }
-
-// SAMPLE
-// function* fetchProducts() {
-//   const products = yield call(Api.fetch, '/products')
-//   // create and yield a dispatch Effect
-//   yield put({ type: 'PRODUCTS_RECEIVED', products })
-// }
 
 export default function* sagaFunction() {
   yield takeLatest(DISPATCH_ACTIONS.GET_LUCKY_NUMBER, getLuckyNumber);
