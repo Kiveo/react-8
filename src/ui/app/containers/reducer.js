@@ -21,9 +21,9 @@ function reducer(state = initialState, action) {
     //case intially was (???), names based on constants/actions
     case DISPATCH_ACTIONS.GET_LUCKY_NUMBER:
       // TODO: Set things in the Redux store
-      return { ...state, userInfo: action.user };
+      return { ...state, userInfo: action.user};
     case DISPATCH_ACTIONS.RETURN_LUCKY_NUMBER:
-      return { ...state, luckyNumber: action.luckyNumber };
+      return { ...state, luckyNumber: 500 };
     default:
       return state;
   }

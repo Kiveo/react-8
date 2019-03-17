@@ -8,12 +8,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-//converted class to functional component
+//converted class to functional component, display only
 const LuckyNumberDisplay = (props) => {
     // TODO: Receive props passed down from LuckyNumber container
     // const { } = this.props;
     const { firstname, lastname, username } = props.userInfo;
-    // const { luckynumber } = props.luckynumber;
     return (
       <div className="mt5 pa4 center w-25 bg-light-gray">
         {/* TODO: Display the user's full name and their lucky number */}

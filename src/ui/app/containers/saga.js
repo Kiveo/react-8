@@ -15,24 +15,33 @@ import { push } from 'react-router-redux';
 import request from 'utils/request';
 
 import { DISPATCH_ACTIONS } from './constants';
+import { returnLuckyNumber } from './actions';
 
-//changed from username to user, accomodating json format expected
 export function* getLuckyNumber({ user }) {
   // TODO: What port is the service layer running on again?
   //altered to backticks to include query string, assigned dev LH: 1337
+  let request2 = request;
   const requestUrl = `http://localhost:1337/lucky-number?username=${user.username}`;
   console.log(requestUrl);
-
   try {
-    const result = yield call(request, requestUrl);
-
+    // debugger;
+    // const result = yield call(request2, requestUrl);
     // TODO: Do stuff with the result
-    //adding yield
-    yield put({ type: "RETURN_LUCKY_NUMBER", luckyNumber})
+    alert("before")
+    yield put(returnLuckyNumber(255))
+    alert("after")
   } catch (err) {
+    console.log(err);
     // TODO: Bonus points for some error handling
   }
 }
+
+// SAMPLE
+// function* fetchProducts() {
+//   const products = yield call(Api.fetch, '/products')
+//   // create and yield a dispatch Effect
+//   yield put({ type: 'PRODUCTS_RECEIVED', products })
+// }
 
 export default function* sagaFunction() {
   yield takeLatest(DISPATCH_ACTIONS.GET_LUCKY_NUMBER, getLuckyNumber);
